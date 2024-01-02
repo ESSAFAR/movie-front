@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.css";
+
+
+/*body{*/
+/*  background-color: #262A56;*/
+/*}*/
+
+
+.row{
+  margin: 3rem;
+}
+
+.header{
+  background-color: #B8621B;
+  margin-bottom: 5rem;
+  padding: 2rem;
+  position: sticky;
+}
+
+.myNavBar{
+  position: sticky;
+}
+

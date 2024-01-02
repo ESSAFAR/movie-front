@@ -1,0 +1,32 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="card mb-3 detail" *ngIf="movie?.id">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="getImage(movie.poster_path)" class="img-fluid rounded-start" alt="{{movie.title}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title h1">{{movie?.title}}</h5>
+        <p class="card-text">{{movie?.overview}}</p>
+        <p class="card-text">Release Date: {{movie?.release_date | date:'mediumDate'}}</p>
+        <p class="card-text">Runtime: {{movie?.runtime}} minutes</p>
+        <p class="card-text">Tagline: {{movie?.tagline}}</p>
+        <p class="card-text">Rating: {{getStarRating(movie?.vote_average)}}</p>
+        <p class="card-text">Add/Remove favorites:
+          <button (click)="onAddToFavorite(movie.id)">Add</button>
+          <span *ngIf= "isFavorite" class="h2 px-5">❤️</span>
+        </p>
+        <p class="card-text">Vote Count: {{movie?.vote_count}}</p>
+      </div>
+    </div>
+  </div>
+  <app-list-comments [comments]="comments"></app-list-comments>
+  <app-create-comment [movieId]="movie.id"></app-create-comment>
+
+
+</div>
+
+<div *ngIf="!movie?.id" class="h2 text-warning text-center m-5 p-1">
+  This movie will be added soon, stay tuned 😉
+</div>

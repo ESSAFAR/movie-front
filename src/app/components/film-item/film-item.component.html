@@ -1,0 +1,8 @@
+<div class="card" (click)="onClick()" style="width: 15rem;" [routerLink]="'/id/' + movie?.id">
+  <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w300' + movie?.poster_path" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{movie?.title}}</h5>
+    <p class="card-text">{{movie?.annee}}</p>
+    <a class="btn btn-primary">Watch</a>
+  </div>
+</div>

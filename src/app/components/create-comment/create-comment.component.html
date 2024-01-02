@@ -1,0 +1,30 @@
+<div class="card mt-3">
+  <div class="card-header">
+    Add a Comment
+  </div>
+  <div class="card-body">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <div class="mb-3">
+        <label for="commentText" class="form-label">Comment:</label>
+        <textarea
+          id="commentText"
+          class="form-control"
+          name="commentText"
+          rows="3"
+          ngModel required
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="author" class="form-label">Your Name:</label>
+        <input
+          type="text"
+          id="author"
+          class="form-control"
+          name="author"
+          ngModel required
+        />
+      </div>
+      <button type="submit" [disabled]="!loginForm.valid"  class="btn btn-primary">Submit Comment</button>
+    </form>
+  </div>
+</div>

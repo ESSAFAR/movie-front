@@ -1,0 +1,8 @@
+<div class="container mt-4">
+  <strong>Movie Comments</strong>
+  <ul class="list-group">
+    <li *ngFor="let comment of comments" class="list-group-item">
+      <div><strong>{{ comment.publisher }} :</strong></div> {{ comment.text }}
+    </li>
+  </ul>
+</div>

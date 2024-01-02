@@ -1,0 +1,6 @@
+<app-nav-bar (onChange)="onChange($event)"></app-nav-bar>
+<div class="row">
+  <div *ngFor="let movie of movies" class="col-4 justify-content-center text-center">
+    <app-film-item [movie]="movie"></app-film-item>
+  </div>
+</div>
